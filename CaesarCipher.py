@@ -1,11 +1,15 @@
-message = input("what message would you like to encrypt?")
+def encrypt(message, key):
+    output = ''
+    for letter in message:
 
-for letter in message:
-    print(ord(letter))
-    ascii_letter = ord(letter)
-    #lower case
-    if(ascii_letter in range(97,122)):
-        print(chr((ascii_letter+3)%122+(0 if ascii_letter>96 else 97)))
-    #upper case
-    if (ascii_letter in range(65, 90)):
-        print(chr((ascii_letter+3)%90+(0 if ascii_letter>64 else 65)))
+        ascii_letter = ord(letter)+key
+
+        #lower case
+        if(ascii_letter in range(97,122)):
+            output += chr((ascii_letter)%122+(0 if ascii_letter>96 else 97))
+        #upper case
+        if (ascii_letter in range(65, 90)):
+            output += chr((ascii_letter)%90+(0 if ascii_letter>64 else 65))
+    print(output)
+
+encrypt(input("what message would you like to encrypt?"), int(input("what is your key?")))
