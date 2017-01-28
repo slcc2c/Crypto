@@ -10,8 +10,8 @@ def encrypt(message, key):
         #upper case
         if (ascii_letter in range(65, 90)):
             output += chr((ascii_letter)%90+(0 if ascii_letter>64 else 65))
-    print(output)
     return output
+
 def decrypt(message, key):
     output = ''
     for letter in message:
@@ -30,7 +30,6 @@ def decrypt(message, key):
             if (ascii_letter < 65):
                 ascii_letter += 26
             output += chr((ascii_letter)%90+(0 if ascii_letter>64 else 65))
-    print(output)
     return output
 
 decrypt(encrypt(input("what message would you like to encrypt?"), int(input("what is your key?"))),int(input("what is your key?")))

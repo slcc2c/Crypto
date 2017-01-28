@@ -20,5 +20,6 @@ def decrypt(message, key):
         else:
             output+=chr(ascii_letter+96)
     return output
+
 print(encrypt("test","as"))
 print(decrypt("uxtm","as"))
